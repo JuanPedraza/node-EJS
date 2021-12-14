@@ -10,13 +10,23 @@ app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 
 
-
+// Rutas
 app.get('/', (req,res)=>{
-    res.render("index", {title: "Página de inicio"})
+    res.render("index")
 })
 
 // Middlewares
 app.use(express.static(__dirname + "/public"))
+
+
+
+
+
+
+
+
+
+
 
 app.listen(port,()=>{
     console.log(cowsay.say({
