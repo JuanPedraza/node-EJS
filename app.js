@@ -10,13 +10,14 @@ app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 
 
+// Middlewares
+app.use(express.static(__dirname + "/public"))
+
+
 // Rutas
 app.get('/', (req,res)=>{
     res.render("index")
 })
-
-// Middlewares
-app.use(express.static(__dirname + "/public"))
 
 
 
