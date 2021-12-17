@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT ||  3000
 
+
 const cowsay = require('cowsay')
 
 
@@ -15,14 +16,8 @@ app.use(express.static(__dirname + "/public"))
 
 
 // Rutas
-app.get('/', (req,res)=>{
-    res.render("index")
-})
-
-app.get('/servicios',(req,res)=>{
-    res.render("servicios")
-})
-
+app.use('/',require("./routes/web"))
+app.use('/agua', require('./routes/agua'))
 
 
 
