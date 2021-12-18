@@ -1,13 +1,26 @@
 const express = require("express")
 const router = express.Router()
 
-router.get('/',(req,res)=>{
-    res.render("agua", {
-        arrayAgua : [
-            {id: '555yyy', mes: "Enero", valor: 78909},
-            {id: '555uuu', mes: "Febrero", valor: 60000},
-        ]
-    })
+const agua = require('../models/agua')
+
+
+router.get('/', async(req,res)=>{
+    try {
+
+        const arrayAguaDB = await agua.find()
+
+        res.render('agua', {
+            arrayAgua : arrayAguaDB
+        })
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+})
+
+router.get('/registrar',(req,res)=>{
+    res.render('registrar')
 })
 
 module.exports = router
