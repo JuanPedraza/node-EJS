@@ -23,4 +23,6 @@ router.get('/registrar',(req,res)=>{
     res.render('registrar')
 })
 
+
+
 module.exports = router

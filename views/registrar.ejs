@@ -1,4 +1,4 @@
-<%- include("template/header", {WebTitle: "Registrar servicio"}) %>
+<%- include("template/header", {WebTitle: "Registrar datos - Agua"}) %>
 
 <div class="container">
 
@@ -8,20 +8,21 @@
     <form action="">
         <div class="mb-3">
             <label class="form-label">Fecha Inicio</label>
-            <input type="text" class="form-control" name="fechaInicio">
-            
+            <input type="date" class="form-control" name="fechaInicio" value="2018-01-01" min="2018-01-01" max="2030-12-31">
+
         </div>
         <div class="mb-3">
             <label class="form-label">Fecha Fin</label>
-            <input type="text" class="form-control" name="fechaFin">
-            
+            <input type="date" class="form-control" name="fechaFin" value="2018-01-01" min="2018-01-01" max="2030-12-31">
+
         </div>
         <div class="mb-3">
             <label class="form-label">Valor</label>
             <input type="text" class="form-control" name="valor">
         </div>
         
-        <button type="submit" class="btn btn-primary">Registrar</button>
+
+        <button type="submit" class="btn btn-block btn-success">Registrar</button>
     </form>
 
 
