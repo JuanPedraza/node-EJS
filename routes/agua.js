@@ -24,5 +24,17 @@ router.get('/registrar',(req,res)=>{
 })
 
 
+router.post('/', async(req,res)=>{
+    const body = req.body
+    try {
+        const aguaDB = new agua(body)
+        await aguaDB.save()
+        console.log(aguaDB)
+        res.redirect('/agua')
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 
 module.exports = router
