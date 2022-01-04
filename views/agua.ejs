@@ -4,7 +4,7 @@
 
 <div class="container">
 
-    
+
     <h3 class="title">Agua</h3>
     <a class="btn btn-primary mb-2" href="/agua/registrar">Nuevo registro</a>
     <table class="table">
@@ -26,7 +26,12 @@
                 <th scope="row"><%= agua.dateStart %> </th>
                 <td><%= agua.dateEnd %></td>
                 <td><%= agua.value %></td>
-                <td>@mdo</td>
+                <td>
+                    <a href="agua/<%= agua.id %>" class="btn btn-warning btn-sm">
+                        Editar
+
+                    </a>
+                </td>
             </tr>
             <% }) %>
             <% } %>

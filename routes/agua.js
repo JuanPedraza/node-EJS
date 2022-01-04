@@ -36,5 +36,29 @@ router.post('/', async(req,res)=>{
     }
 })
 
+router.get('/:id', async(req,res)=>{
+
+    const id = req.params.id
+
+    try {
+
+        const aguaDB = await agua.findOne({_id : id})
+        console.log(aguaDB)
+
+        res.render('detalle', {
+            servicio: aguaDB,
+            error: false
+        })
+        
+    } catch (error) {
+        console.log(error)
+        res.render('detalle', {
+            error: true,
+            mensaje: 'No se encuentra o no existe el id seleccionado'
+        })
+        
+    }
+})
+
 
 module.exports = router

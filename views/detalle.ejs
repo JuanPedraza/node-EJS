@@ -1,0 +1,51 @@
+<%- include("template/header", {WebTitle: "Detalle - Agua"}) %>
+
+<div class="container">
+
+    <h1 class="title">Detalle del registro</h1>
+
+    <% if (error) { %>
+
+    <p> <%= mensaje %> </p>
+
+    <a href="/agua" class="btn btn-dark ">Volver al menu Agua</a>
+
+    <% } %>
+
+
+    <% if (!error) { %>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Fecha inicio</th>
+                <th scope="col">Fecha Fin</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+
+
+                <th scope="row"><%= servicio.dateStart %> </th>
+                <td><%= servicio.dateEnd %></td>
+                <td><%= servicio.value %></td>
+                <td>@mdo</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <% } %>
+
+
+
+
+
+</div>
+
+
+<%- include("template/footer") %>
